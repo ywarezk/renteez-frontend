@@ -13,6 +13,7 @@
  *********************/
 
 import React, { Component } from 'react';
+import { Router, Route, Link } from 'react-router'
 
 /*********************
  * end imports
@@ -25,13 +26,9 @@ export default class MenuComponent extends Component {
     return (
         <ul className="nav navbar-nav navbar-right">
             <li className="hidden active">
-                <a href="#page-top" className="page-scroll"></a>
-            </li>
-            <li>
-                <a href="#about" className="page-scroll">About</a>
-            </li>
-            <li>
-                <a href="#contact" className="page-scroll">Contact</a>
+                <Link to={`/about`}>
+                    About
+                </Link>
             </li>
         </ul>
     );

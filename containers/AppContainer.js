@@ -32,7 +32,7 @@ class AppContainer extends Component {
     const { children } = this.props
     return (
       <div>
-
+        <NavComponent />
         {children}
       </div>
     );
