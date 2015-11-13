@@ -128,11 +128,11 @@ export function loadStargazers(fullName, nextPage) {
   }
 }
 
-export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
+export const RESET_CITY_LIST = 'RESET_CITY_LIST'
 
 // Resets the currently visible error message.
-export function resetErrorMessage() {
+export function resetCityList() {
   return {
-    type: RESET_ERROR_MESSAGE
+    type: RESET_CITY_LIST
   }
 }
