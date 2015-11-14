@@ -21,7 +21,7 @@ export default function paginate({ types, mapActionToKey }) {
     nextPageUrl: undefined,
     pageCount: 0,
     ids: []
-  }, action) {
+  }, action = null) {
     switch (action.type) {
       case requestType:
         return merge({}, state, {
@@ -43,7 +43,7 @@ export default function paginate({ types, mapActionToKey }) {
     }
   }
 
-  return function updatePaginationByKey(state = {}, action) {
+  return function updatePaginationByKey(state = {}, action = null) {
     switch (action.type) {
       case requestType:
       case successType:

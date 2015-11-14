@@ -11,12 +11,11 @@
  * begin imports
  *********************/
 
-import React from 'react'
-import { Route } from 'react-router'
-import AppContainer from './containers/AppContainer'
-import AboutContainer from './containers/AboutContainer'
-import UserPage from './containers/UserPage'
-import RepoPage from './containers/RepoPage'
+import React from 'react';
+import { Route } from 'react-router';
+import AppContainer from './containers/AppContainer';
+import AboutContainer from './containers/AboutContainer';
+import HomepageContainer from './containers/HomepageContainer';
 
 /*********************
  * end imports
@@ -28,9 +27,10 @@ import RepoPage from './containers/RepoPage'
 
 export default (
   <Route path="/" component={AppContainer}>
+    <Route path="/" component={HomepageContainer} />
     <Route path="/about" component={AboutContainer} />
   </Route>
-)
+);
 
 /*********************
  * end routes
