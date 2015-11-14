@@ -14,7 +14,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
-import Explore from '../components/Explore';
 import { resetCityList } from '../actions';
 import NavComponent from '../components/nav/NavComponent';
 

@@ -12,7 +12,7 @@
  *********************/
 
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 import AppContainer from './containers/AppContainer';
 import AboutContainer from './containers/AboutContainer';
 import HomepageContainer from './containers/HomepageContainer';
@@ -27,10 +27,11 @@ import HomepageContainer from './containers/HomepageContainer';
 
 export default (
   <Route path="/" component={AppContainer}>
-    <Route path="/" component={HomepageContainer} />
+    <IndexRoute component={HomepageContainer} />
     <Route path="/about" component={AboutContainer} />
   </Route>
 );
+
 
 /*********************
  * end routes

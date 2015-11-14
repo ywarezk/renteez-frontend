@@ -1,5 +1,8 @@
 html,
-body {
+body,
+#root,
+#root > div,
+#root > div > div{
   height: 100%;
 }
 .img-centered {
