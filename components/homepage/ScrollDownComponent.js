@@ -13,6 +13,7 @@
  *********************/
 
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 /*********************
  * end imports
@@ -27,15 +28,13 @@ import React, { Component } from 'react';
 export default class ScrollDownComponent extends Component {
 
     render(){
-
+        const directTo = this.props.directTo;
         return (
-
             <div className="scroll-down">
-                <a href="#about" className="btn page-scroll">
+                <Link to={directTo} className="btn page-scroll" >
                     <i className="fa fa-angle-down fa-fw"></i>
-                </a>
+                </Link>
             </div>
-
         );
 
     }

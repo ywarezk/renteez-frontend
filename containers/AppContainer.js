@@ -14,8 +14,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
-import { resetCityList } from '../actions';
+import { resetCityList } from '../actions/RenteezActions';
 import NavComponent from '../components/nav/NavComponent';
+import RouteCssTransitionContainer from '../containers/RouteCssTransitionContainer';
+
 
 /****************
  * end imports
@@ -32,7 +34,12 @@ class AppContainer extends Component {
     return (
       <div>
         <NavComponent />
-        {children}
+        <RouteCssTransitionContainer
+          component="div" transitionName="example"
+          transitionEnterTimeout={500} transitionLeaveTimeout={500}
+        >
+          {children}
+        </RouteCssTransitionContainer>
       </div>
     );
   }

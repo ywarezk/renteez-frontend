@@ -13,7 +13,7 @@
  *********************/
 
 import React, { Component } from 'react';
-import { Router, Route, Link } from 'react-router'
+import { Router, Route, Link } from 'react-router';
 
 /*********************
  * end imports
@@ -25,9 +25,14 @@ export default class MenuComponent extends Component {
   render() {
     return (
         <ul className="nav navbar-nav navbar-right">
-            <li className="hidden active">
+            <li>
                 <Link to={`/about`}>
                     About
+                </Link>
+            </li>
+            <li>
+                <Link to={`/contact`}>
+                    Contact Us
                 </Link>
             </li>
         </ul>

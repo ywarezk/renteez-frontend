@@ -59,7 +59,7 @@ export default class HomepageContainer extends Component {
                         cities={this.cities}
                         />
                 </div>
-                <ScrollDownComponent />
+                <ScrollDownComponent directTo={`/about`} />
             </header>
         );
     };
