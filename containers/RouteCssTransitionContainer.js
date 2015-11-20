@@ -32,7 +32,6 @@ class RouteCssTransitionContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
-    debugger;
     if (nextContext.location.pathname !== this.context.location.pathname) {
       this.setState({ previousPathname: this.context.location.pathname });
     }

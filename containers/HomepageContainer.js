@@ -14,7 +14,6 @@
 import React, { Component } from 'react';
 import CarouselComponent from '../components/homepage/CarouselComponent';
 import SearchComponent from '../components/homepage/SearchComponent';
-import ScrollDownComponent from '../components/homepage/ScrollDownComponent';
 
 /*********************
  * end imports
@@ -59,7 +58,6 @@ export default class HomepageContainer extends Component {
                         cities={this.cities}
                         />
                 </div>
-                <ScrollDownComponent directTo={`/about`} />
             </header>
         );
     };

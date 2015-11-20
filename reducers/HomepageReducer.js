@@ -19,7 +19,7 @@ import { Map  } from 'immutable';
  * end imports
  *********************/
 
-const INITIAL_STATE = Map();
+const defaultState = new Map();
 
 /**
  * generic function that will recieve actions from the homepage and return a new state
@@ -27,7 +27,7 @@ const INITIAL_STATE = Map();
  * @param action
  * @returns {*}
  */
-export function HomepageReducer(state = INITIAL_STATE, action = null){
+export function HomepageReducer(state = defaultState, action = null){
     let map = Map(state);
     switch (action.type){
         case SUCCESS_FETCH_CITIES:

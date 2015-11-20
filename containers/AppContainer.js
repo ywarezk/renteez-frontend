@@ -30,10 +30,10 @@ import RouteCssTransitionContainer from '../containers/RouteCssTransitionContain
 class AppContainer extends Component {
 
   render() {
-    const { children } = this.props
+    const { children, router } = this.props;
     return (
       <div>
-        <NavComponent />
+        <NavComponent route={router.location.pathname} />
         <RouteCssTransitionContainer
           component="div" transitionName="example"
           transitionEnterTimeout={500} transitionLeaveTimeout={500}
@@ -50,9 +50,8 @@ AppContainer.propTypes = {
   children: PropTypes.node
 };
 
-function mapStateToProps(/*state*/) {
-  return {
-  }
+function mapStateToProps(state) {
+  return state;
 }
 
 export default connect(mapStateToProps, {

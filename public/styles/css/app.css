@@ -205,6 +205,10 @@ hr.colored {
 .navbar .navbar-nav li a:focus {
   outline: none;
 }
+.navbar .navbar-header {
+  position: relative;
+  top: 17px;
+}
 .navbar .navbar-header .renteez-logo {
   color: white;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -225,6 +229,9 @@ hr.colored {
   font-weight: 400;
   text-transform: uppercase;
   text-transform: none;
+}
+.navbar.navbar-expanded .navbar-header {
+  position: static;
 }
 header.renteez-header {
   background-image: url('/public/img/bg-header.jpg');

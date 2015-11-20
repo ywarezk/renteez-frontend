@@ -15,6 +15,7 @@
 import React, { Component } from 'react';
 import LogoComponent from './LogoComponent';
 import MenuComponent from './MenuComponent';
+import { store } from '../../index';
 
 /*********************
  * end imports
@@ -22,10 +23,17 @@ import MenuComponent from './MenuComponent';
 
 export default class NavComponent extends Component {
 
+    render() {
 
-  render() {
-    return (
-        <nav className="navbar navbar-inverse navbar-fixed-top navbar-expanded">
+        const { route } = this.props;
+        let classNames = 'navbar navbar-inverse navbar-fixed-top';
+        if(route === '/'){
+            classNames = 'navbar navbar-inverse navbar-fixed-top navbar-expanded';
+        }
+
+
+        return (
+        <nav className={classNames}>
             <div className="container">
                 <LogoComponent />
                 <div id="bs-example-navbar-collapse-1" className="collapse navbar-collapse">
@@ -33,7 +41,7 @@ export default class NavComponent extends Component {
                 </div>
             </div>
         </nav>
-    );
-  }
+        );
+    }
 }
 
