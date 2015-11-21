@@ -67,10 +67,12 @@ export function changeSearch(text){
     let geo = new GeocodeModel();
     let result = geo.geocoding(text);
     console.log('2.1. got cities: ' + result);
-    result.then((result) => {
-        dispatch(receiveCities(result));
+    result.then((response) => {
+        response.text().then((result) =>{
+            dispatch(receiveCities(JSON.parse(result)));
+        })
     })
-    .then((e)=>{
+    .catch((e)=>{
         dispatch(errorFetchCities(e))
     });
   };
