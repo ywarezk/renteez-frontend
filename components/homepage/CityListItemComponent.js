@@ -11,7 +11,7 @@
  * begin imports
  *********************/
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 /*********************
  * end imports
@@ -21,12 +21,21 @@ export default class CityListItemComponent extends Component {
 
     render(){
         console.log('rendering CityListItem component');
+        const { cityObject } = this.props;
         return (
             <li className="city-list-item">
-                {this.props.cityObject}
+                {cityObject.city}
             </li>
         );
     }
 
 }
+
+/**
+ * defined the properties of the search component
+ * @type {{onChange: *}}
+ */
+CityListItemComponent.propTypes = {
+  cityObject: PropTypes.object.isRequired
+};
 

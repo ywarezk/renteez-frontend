@@ -15,6 +15,7 @@
 import React, { Component, PropTypes } from 'react';
 import CityListItemComponent from './CityListItemComponent';
 import {List} from 'immutable';
+import _ from 'lodash';
 
 /*********************
  * end imports
@@ -28,32 +29,26 @@ import {List} from 'immutable';
 //add translation here
 export default class SearchComponent extends Component {
 
-    getCities(){
-        return this.props.cities || List();
-    };
-
     render(){
         console.log('rendering search component');
-        const { onChange, isLoading } = this.props;
-        console.log('isLoading: ' + isLoading);
-        const cities = this.getCities();
+        const { onChange, isLoading, cities } = this.props;
+        console.log('cities: ' + JSON.stringify(cities));
 
         //set the city list
-        //let citiesRendered = (
-        //        <div className="city-list-wrapper">
-        //            {
-        //                _.forEach(cities, (cityObject) => {
-        //                    return <CityListItemComponent
-        //                        cityObject={cityObject}
-        //                        key={Math.random()}
-        //                        />
-        //                });
-        //            }
-        //        </div>
-        //    );
+        let citiesRendered;
+        if(cities != null && cities.length > 0){
+            citiesRendered = (
+                <div className="city-list-wrapper">
+                    {
+                        cities.map((city) => {
+                            return <CityListItemComponent cityObject={city} />
+                        })
+                    }
+                </div>
+            );
+        }
 
         //set the main form
-
         return (
             <div className="renteez-homesearch">
                 <div className="row content-row">
@@ -82,7 +77,7 @@ export default class SearchComponent extends Component {
                                 </div>
                             </div>
                         </form>
-
+                        {citiesRendered}
                     </div>
                 </div>
             </div>
