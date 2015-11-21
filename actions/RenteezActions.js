@@ -60,23 +60,19 @@ export function changeSearch(text){
   /**
    * we return an async thunk function
    */
-  return async function(dispatch){
+  return function(dispatch){
 
     dispatch(requestCities());
 
     let geo = new GeocodeModel();
-    console.log('1. running text in geocoding: ' + text);
-    try{
-      let result = geo.geocoding(text);
-      console.log('2.1. got cities: ' + result);
-      dispatch(receiveCities(result));
-    }
-    catch(e){
-      console.log('2.2. got error: ' + e);
-      dispatch(errorFetchCities(e));
-    }
-
-
+    let result = geo.geocoding(text);
+    console.log('2.1. got cities: ' + result);
+    result.then((result) => {
+        dispatch(receiveCities(result));
+    })
+    .then((e)=>{
+        dispatch(errorFetchCities(e))
+    });
   };
 }
 

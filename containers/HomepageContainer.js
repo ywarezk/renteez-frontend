@@ -31,7 +31,7 @@ import { ImmutableRenderMixin } from 'react-immutable-render-mixin';
 class HomepageContainer extends Component {
 
     /**
-     * constructor`
+     * constructor
      * @param props
      */
     constructor(props) {
@@ -54,7 +54,7 @@ class HomepageContainer extends Component {
      */
     render(){
         console.log('rendering homepage container');
-        console.log(JSON.stringify(this.state));
+        console.log(JSON.stringify(this.props));
         const { cities, isLoading} = this.props;
         return (
             <header className="renteez-header" >
@@ -93,7 +93,7 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    changeSearch: (searchString) => dispatch(RenteezActions.requestCities())
+    changeSearch: (searchString) => dispatch(RenteezActions.changeSearch(searchString))
   }
 }
 

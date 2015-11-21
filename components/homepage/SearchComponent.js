@@ -33,25 +33,27 @@ export default class SearchComponent extends Component {
     };
 
     render(){
+        console.log('rendering search component');
         const { onChange, isLoading } = this.props;
+        console.log('isLoading: ' + isLoading);
         const cities = this.getCities();
 
         //set the city list
-        let citiesRendered = (
-                <div className="city-list-wrapper">
-                    {cities.map(cityObject =>
-                        <CityListItemComponent
-                            cityObject={cityObject}
-                            key={Math.random()}
-                        />
-                    )}
-
-                </div>
-            );
+        //let citiesRendered = (
+        //        <div className="city-list-wrapper">
+        //            {
+        //                _.forEach(cities, (cityObject) => {
+        //                    return <CityListItemComponent
+        //                        cityObject={cityObject}
+        //                        key={Math.random()}
+        //                        />
+        //                });
+        //            }
+        //        </div>
+        //    );
 
         //set the main form
-        console.log('rendering search component');
-        console.log(JSON.stringify(this.state));
+
         return (
             <div className="renteez-homesearch">
                 <div className="row content-row">
@@ -61,6 +63,10 @@ export default class SearchComponent extends Component {
                                 <div className="form-group col-xs-12 floating-label-form-group controls">
                                     <label>
                                         City Name
+
+                                        {
+                                            isLoading ? <i className="fa fa-spinner fa-spin"></i> : <i className="fa fa-spinner fa-spin hidden"></i>
+                                        }
                                     </label>
                                     <input type="text" data-validation-required-message="Please enter your name." required="" onChange={e => onChange(e.target.value)} id="name" placeholder="Enter city name..." className="form-control" />
                                     <p className="help-block text-danger"></p>
@@ -76,7 +82,7 @@ export default class SearchComponent extends Component {
                                 </div>
                             </div>
                         </form>
-                        {citiesRendered}
+
                     </div>
                 </div>
             </div>
@@ -92,7 +98,8 @@ export default class SearchComponent extends Component {
  * @type {{onChange: *}}
  */
 SearchComponent.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired
 };
 
 
