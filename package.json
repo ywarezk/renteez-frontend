@@ -1,5 +1,5 @@
 {
-  "name": "redux-real-world-example",
+  "name": "renteez-frontend",
   "version": "0.0.0",
   "description": "Redux real-world example",
   "scripts": {
@@ -22,7 +22,6 @@
     "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.1.1",
     "lodash": "^3.10.1",
-    "node-geocoder": "^3.4.1",
     "normalizr": "^1.0.0",
     "react": "^0.14.0",
     "react-addons-css-transition-group": "^0.14.2",

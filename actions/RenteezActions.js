@@ -54,6 +54,8 @@ export function errorFetchCities(e){
  */
 export function changeSearch(text){
 
+  console.log('1. Searching for: ' + text);
+
   /**
    * we return an async thunk function
    */

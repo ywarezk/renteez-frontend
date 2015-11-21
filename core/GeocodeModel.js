@@ -12,7 +12,8 @@
  * begin imports
  *****************/
 
-import * as GeocoderFactory from 'node-geocoder';
+//import * as GeocoderFactory from 'node-geocoder';
+var geocoder = require('geocoder');
 
 /*****************
  * end imports
@@ -29,8 +30,12 @@ export class GeocodeModel{
      * @param {String} text
      */
     geocoding(searchText){
-        var geocoder = GeocoderFactory.default('google', 'http', {});
-        return geocoder.geocode(searchText);
+        console.log('0.1');
+        //let geocoder = GeocoderFactory.default('google', 'http', {});
+        console.log('0.2 ' + searchText);
+        let result = geocoder.geocode(searchText);
+        console.log('0.3');
+        return result;
     }
 
 };

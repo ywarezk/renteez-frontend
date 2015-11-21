@@ -24,11 +24,7 @@ module.exports = {
       exclude: /node_modules/,
       include: __dirname
     }]
-  },
-  node: {
-    net: "empty",
-    tls: "empty"
-  },
+  }
 };
 
 

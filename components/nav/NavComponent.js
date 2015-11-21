@@ -12,10 +12,9 @@
  * begin imports
  *********************/
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import LogoComponent from './LogoComponent';
 import MenuComponent from './MenuComponent';
-import { store } from '../../index';
 
 /*********************
  * end imports
@@ -31,7 +30,6 @@ export default class NavComponent extends Component {
             classNames = 'navbar navbar-inverse navbar-fixed-top navbar-expanded';
         }
 
-
         return (
         <nav className={classNames}>
             <div className="container">
@@ -44,4 +42,12 @@ export default class NavComponent extends Component {
         );
     }
 }
+
+/**
+ * defined the properties of the nav component
+ * @type {{onChange: *}}
+ */
+NavComponent.propTypes = {
+  route: PropTypes.func.isRequired
+};
 

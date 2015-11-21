@@ -14,6 +14,9 @@
 import React, { Component } from 'react';
 import CarouselComponent from '../components/homepage/CarouselComponent';
 import SearchComponent from '../components/homepage/SearchComponent';
+import {store} from '../index';
+import { connect } from 'react-redux';
+import * as RenteezActions from '../actions/RenteezActions';
 
 /*********************
  * end imports
@@ -24,7 +27,7 @@ import SearchComponent from '../components/homepage/SearchComponent';
  * begin header
  *********************/
 
-export default class HomepageContainer extends Component {
+class HomepageContainer extends Component {
 
     /**
      * constructor`
@@ -41,7 +44,7 @@ export default class HomepageContainer extends Component {
      * @param {object} event
      */
     onChangeCitySearch(searchString){
-        console.log('Searching for: ' + searchString);
+        this.props.changeSearch(searchString);
     };
 
     /**
@@ -49,13 +52,14 @@ export default class HomepageContainer extends Component {
      * @returns {XML}
      */
     render(){
+        const { cities} = this.props;
         return (
             <header className="renteez-header" >
                 <div className="intro-content">
                     <CarouselComponent />
                     <SearchComponent
                         onChange={this.onChangeCitySearch}
-                        cities={this.cities}
+                        cities={cities}
                         />
                 </div>
             </header>
@@ -63,6 +67,34 @@ export default class HomepageContainer extends Component {
     };
 
 }
+
+/**
+ * which items from the state do we want to get
+ * @param state
+ * @returns {{cities: (*|Array|cities|newCities)}}
+ */
+function mapStateToProps(state) {
+  return {
+    cities: state.cities
+  }
+}
+
+
+/**
+ * which actions do the homepage want to get
+ * @param dispatch
+ * @returns {{changeSearch: Function}}
+ */
+function mapDispatchToProps(dispatch) {
+  return {
+    changeSearch: (searchString) => dispatch(RenteezActions.changeSearch(searchString))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomepageContainer);
 
 
 /*********************
