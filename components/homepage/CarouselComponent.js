@@ -27,7 +27,7 @@ import React, { Component } from 'react';
 export default class CarouselComponent extends Component {
 
     render(){
-
+        console.log('rendering Carousel component');
         return (
             <div>
                 <div className="brand-name">Renteez</div>

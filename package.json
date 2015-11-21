@@ -1,13 +1,13 @@
 {
   "name": "renteez-frontend",
   "version": "0.0.0",
-  "description": "Redux real-world example",
+  "description": "Renteez react app",
   "scripts": {
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rackt/redux.git"
+    "url": "https://github.com/ywarezk/renteez-frontend.git"
   },
   "license": "MIT",
   "bugs": {
@@ -26,6 +26,7 @@
     "react": "^0.14.0",
     "react-addons-css-transition-group": "^0.14.2",
     "react-dom": "^0.14.0",
+    "react-immutable-render-mixin": "^0.8.1",
     "react-redux": "^2.1.2",
     "react-router": "^1.0.0-rc1",
     "react-static-container": "^1.0.0",

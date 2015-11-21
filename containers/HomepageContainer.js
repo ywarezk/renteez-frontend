@@ -17,6 +17,7 @@ import SearchComponent from '../components/homepage/SearchComponent';
 import {store} from '../index';
 import { connect } from 'react-redux';
 import * as RenteezActions from '../actions/RenteezActions';
+import { ImmutableRenderMixin } from 'react-immutable-render-mixin';
 
 /*********************
  * end imports
@@ -52,7 +53,9 @@ class HomepageContainer extends Component {
      * @returns {XML}
      */
     render(){
-        const { cities} = this.props;
+        console.log('rendering homepage container');
+        console.log(JSON.stringify(this.state));
+        const { cities, isLoading} = this.props;
         return (
             <header className="renteez-header" >
                 <div className="intro-content">
@@ -60,6 +63,7 @@ class HomepageContainer extends Component {
                     <SearchComponent
                         onChange={this.onChangeCitySearch}
                         cities={cities}
+                        isLoading={isLoading}
                         />
                 </div>
             </header>
@@ -67,6 +71,7 @@ class HomepageContainer extends Component {
     };
 
 }
+HomepageContainer.mixins = [ImmutableRenderMixin];
 
 /**
  * which items from the state do we want to get
@@ -75,7 +80,8 @@ class HomepageContainer extends Component {
  */
 function mapStateToProps(state) {
   return {
-    cities: state.cities
+    cities: state.HomepageReducer.cities,
+    isLoading: state.HomepageReducer.isLoading
   }
 }
 
@@ -87,7 +93,7 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    changeSearch: (searchString) => dispatch(RenteezActions.changeSearch(searchString))
+    changeSearch: (searchString) => dispatch(RenteezActions.requestCities())
   }
 }
 

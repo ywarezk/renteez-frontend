@@ -29,6 +29,7 @@ export default class AboutContainer extends Component {
      * @returns {XML}
      */
     render(){
+        console.log('rendering About container');
         return (
            <section id="about">
                 <div className="container-fluid">

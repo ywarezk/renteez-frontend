@@ -23,6 +23,7 @@ export default class LogoComponent extends Component {
 
 
   render() {
+    console.log('rendering Logo component');
     return (
         <div className="navbar-header">
             <Link to={`/`} className="navbar-brand page-scroll renteez-logo">

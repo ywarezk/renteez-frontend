@@ -40,6 +40,7 @@ class RouteCssTransitionContainer extends React.Component {
   render() {
     const { children, ...props } = this.props;
     const { previousPathname } = this.state;
+    console.log('rendering Route css transition');
 
     //console.log(JSON.stringify(this.props));
     return (

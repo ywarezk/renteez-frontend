@@ -15,6 +15,7 @@
 import React, { Component, PropTypes } from 'react';
 import LogoComponent from './LogoComponent';
 import MenuComponent from './MenuComponent';
+import { connect } from 'react-redux';
 
 /*********************
  * end imports
@@ -23,7 +24,7 @@ import MenuComponent from './MenuComponent';
 export default class NavComponent extends Component {
 
     render() {
-
+        console.log('rendering navcomponent');
         const { route } = this.props;
         let classNames = 'navbar navbar-inverse navbar-fixed-top';
         if(route === '/'){
@@ -43,11 +44,16 @@ export default class NavComponent extends Component {
     }
 }
 
+
+
 /**
  * defined the properties of the nav component
  * @type {{onChange: *}}
  */
 NavComponent.propTypes = {
-  route: PropTypes.func.isRequired
+  route: PropTypes.string.isRequired
 };
 
+export default connect(
+    () => {return {}}
+)(NavComponent);

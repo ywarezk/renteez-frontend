@@ -30,6 +30,7 @@ import RouteCssTransitionContainer from '../containers/RouteCssTransitionContain
 class AppContainer extends Component {
 
   render() {
+    console.log('rendering app container');
     const { children, router } = this.props;
     return (
       <div>
@@ -51,7 +52,9 @@ AppContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return state;
+  return {
+    router: state.router
+  };
 }
 
 export default connect(mapStateToProps, {

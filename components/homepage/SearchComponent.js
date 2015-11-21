@@ -33,7 +33,7 @@ export default class SearchComponent extends Component {
     };
 
     render(){
-        const { onChange } = this.props;
+        const { onChange, isLoading } = this.props;
         const cities = this.getCities();
 
         //set the city list
@@ -50,6 +50,8 @@ export default class SearchComponent extends Component {
             );
 
         //set the main form
+        console.log('rendering search component');
+        console.log(JSON.stringify(this.state));
         return (
             <div className="renteez-homesearch">
                 <div className="row content-row">
@@ -57,7 +59,9 @@ export default class SearchComponent extends Component {
                         <form noValidate="" id="contactForm" name="sentMessage">
                             <div className="row control-group">
                                 <div className="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>City Name</label>
+                                    <label>
+                                        City Name
+                                    </label>
                                     <input type="text" data-validation-required-message="Please enter your name." required="" onChange={e => onChange(e.target.value)} id="name" placeholder="Enter city name..." className="form-control" />
                                     <p className="help-block text-danger"></p>
                                     <ul className="city-list">

@@ -20,6 +20,7 @@ import React, { Component } from 'react';
 export default class CityListItemComponent extends Component {
 
     render(){
+        console.log('rendering CityListItem component');
         return (
             <li className="city-list-item">
                 {this.props.cityObject}

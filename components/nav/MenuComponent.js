@@ -23,19 +23,20 @@ export default class MenuComponent extends Component {
 
 
   render() {
-    return (
-        <ul className="nav navbar-nav navbar-right">
-            <li>
-                <Link to={`/about`}>
-                    About
-                </Link>
-            </li>
-            <li>
-                <Link to={`/contact`}>
-                    Contact Us
-                </Link>
-            </li>
-        </ul>
-    );
+        console.log('rendering Menu component');
+        return (
+            <ul className="nav navbar-nav navbar-right">
+                <li>
+                    <Link to={`/about`}>
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link to={`/contact`}>
+                        Contact Us
+                    </Link>
+                </li>
+            </ul>
+        );
   }
 }

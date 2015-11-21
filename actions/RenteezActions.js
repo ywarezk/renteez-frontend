@@ -36,6 +36,7 @@ export function requestCities(){
  * @param cities
  */
 export function receiveCities(cities){
+  console.log('cities: ' + JSON.stringify(cities));
   return {type: types.SUCCESS_FETCH_CITIES, cities: cities};
 }
 
