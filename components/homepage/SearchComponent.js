@@ -39,11 +39,13 @@ export default class SearchComponent extends Component {
         if(cities != null && cities.length > 0){
             citiesRendered = (
                 <div className="city-list-wrapper">
-                    {
-                        cities.map((city) => {
-                            return <CityListItemComponent cityObject={city} />
-                        })
-                    }
+                    <ul className="city-list">
+                        {
+                            cities.map((city) => {
+                                return <CityListItemComponent cityObject={city} />
+                            })
+                        }
+                    </ul>
                 </div>
             );
         }
@@ -65,8 +67,7 @@ export default class SearchComponent extends Component {
                                     </label>
                                     <input type="text" data-validation-required-message="Please enter your name." required="" onChange={e => onChange(e.target.value)} id="name" placeholder="Enter city name..." className="form-control" />
                                     <p className="help-block text-danger"></p>
-                                    <ul className="city-list">
-                                    </ul>
+                                    {citiesRendered}
                                 </div>
                             </div>
                             <br />
@@ -77,7 +78,7 @@ export default class SearchComponent extends Component {
                                 </div>
                             </div>
                         </form>
-                        {citiesRendered}
+
                     </div>
                 </div>
             </div>
