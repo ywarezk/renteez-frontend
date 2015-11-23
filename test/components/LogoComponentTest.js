@@ -35,10 +35,7 @@ describe('LogoComponentTest', ()=>{
         const component = renderIntoDocument(
             <LogoComponent />
         );
-        const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
         const anchors = scryRenderedDOMComponentsWithTag(component, 'a');
-
-        expect(buttons.length).to.equal(1);
         expect(anchors.length).to.equal(1);
     });
 

@@ -9,7 +9,7 @@
 
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
-import ExecutionEnvironment from 'react/lib/ExecutionEnvironment';
+import ExecutionEnvironment from 'exenv';
 import jsdom from 'mocha-jsdom';
 
 export default function jsdomReact() {
