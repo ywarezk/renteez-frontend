@@ -62,7 +62,7 @@ export default class SearchComponent extends Component {
                                         City Name
 
                                         {
-                                            isLoading ? <i className="fa fa-spinner fa-spin"></i> : <i className="fa fa-spinner fa-spin hidden"></i>
+                                            isLoading ? <i className="fa fa-spinner fa-spin"></i> : ''
                                         }
                                     </label>
                                     <input type="text" data-validation-required-message="Please enter your name." required="" onChange={e => onChange(e.target.value)} id="name" placeholder="Enter city name..." className="form-control" />
@@ -95,7 +95,8 @@ export default class SearchComponent extends Component {
  */
 SearchComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  cities: PropTypes.array.isRequired
 };
 
 
