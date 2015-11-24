@@ -12,6 +12,7 @@
  *********************/
 
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 /*********************
  * end imports
@@ -23,8 +24,15 @@ export default class CityListItemComponent extends Component {
         console.log('rendering CityListItem component');
         const { cityObject } = this.props;
         return (
-            <li className="city-list-item">
-                {cityObject.city}
+            <li className="city-list-item list-group-item">
+                <h5>
+                    <Link to={`/map`}>
+                        <i className="fa fa-map-marker" ></i>
+                        <span>
+                            {cityObject.city}
+                        </span>
+                    </Link>
+                </h5>
             </li>
         );
     }

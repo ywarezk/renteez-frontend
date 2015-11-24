@@ -17,6 +17,7 @@ import CityListItemComponent from './CityListItemComponent';
 import {List} from 'immutable';
 import _ from 'lodash';
 
+
 /*********************
  * end imports
  *********************/
@@ -39,7 +40,7 @@ export default class SearchComponent extends Component {
         if(cities != null && cities.length > 0){
             citiesRendered = (
                 <div className="city-list-wrapper">
-                    <ul className="city-list">
+                    <ul className="city-list list-group">
                         {
                             cities.map((city) => {
                                 return <CityListItemComponent cityObject={city} />
@@ -67,16 +68,11 @@ export default class SearchComponent extends Component {
                                     </label>
                                     <input type="text" data-validation-required-message="Please enter your name." required="" onChange={e => onChange(e.target.value)} id="name" placeholder="Enter city name..." className="form-control" />
                                     <p className="help-block text-danger"></p>
-                                    {citiesRendered}
                                 </div>
+                                {citiesRendered}
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div className="row">
-                                <div className="form-group col-xs-12">
-                                    <button className="btn btn-outline-light" type="submit">Send</button>
-                                </div>
-                            </div>
                         </form>
 
                     </div>

@@ -16,6 +16,7 @@ import { Route, IndexRoute } from 'react-router';
 import AppContainer from './containers/AppContainer';
 import AboutContainer from './containers/AboutContainer';
 import HomepageContainer from './containers/HomepageContainer';
+import MapContainer from './containers/MapContainer';
 
 /*********************
  * end imports
@@ -29,6 +30,7 @@ export default  (
   <Route path="/" component={AppContainer}>
     <IndexRoute component={HomepageContainer} />
     <Route path="/about" component={AboutContainer} />
+    <Route path="/map" component={MapContainer} />
   </Route>
 );
 

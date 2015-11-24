@@ -37,6 +37,7 @@ class HomepageContainer extends Component {
     constructor(props) {
         super(props);
         this.onChangeCitySearch = this.onChangeCitySearch.bind(this);
+        this.timeoutReference = null;
     };
 
     /**
@@ -45,7 +46,10 @@ class HomepageContainer extends Component {
      * @param {object} event
      */
     onChangeCitySearch(searchString){
-        this.props.changeSearch(searchString);
+        if(this.timeoutReference != null)clearTimeout(this.timeoutReference);
+        this.timeoutReference = setTimeout(() => {
+            this.props.changeSearch(searchString);
+        }, 1000);
     };
 
     /**
