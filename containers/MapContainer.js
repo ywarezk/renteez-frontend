@@ -12,6 +12,7 @@
  *********************/
 
 import React, { Component } from 'react';
+import { Map, TileLayer } from 'react-leaflet';
 
 /*********************
  * end imports
@@ -32,9 +33,12 @@ export default class MapContainer extends Component {
         console.log('rendering About container');
         return (
            <section id="map">
-                <h1>
-                    Hello map page
-                </h1>
+                <Map bounds={[[50.505, -29.09],[52.505, 29.09]]}>
+                    <TileLayer
+                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                      url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                    />
+                </Map>
             </section>
         );
     };

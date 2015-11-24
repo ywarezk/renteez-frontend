@@ -1173,3 +1173,19 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
   width: 100%;
   padding: 10px 15px;
 }
+/**
+ * Styling for the map page
+ *
+ * Created November 24th, 2015
+ * @author: ywarezk
+ * @version: 1.0
+ * @copyright: Nerdz Ltd.
+ */
+#map {
+  height: 100%;
+  width: 100%;
+}
+#map #map1 {
+  height: 100%;
+  width: 100%;
+}
