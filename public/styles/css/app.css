@@ -1140,3 +1140,36 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 .form-control {
   color: #fff;
 }
+/**
+ * Styling for the lists in our app
+ *
+ * Created November 24th, 2015
+ * @author: ywarezk
+ * @version: 1.0
+ * @copyright: Nerdz Ltd
+ */
+.city-list-wrapper {
+  margin-top: 77px;
+}
+.city-list-wrapper .city-list.list-group .city-list-item.list-group-item {
+  text-align: left;
+  background-color: rgba(34, 34, 34, 0.6);
+  padding: 0;
+}
+.city-list-wrapper .city-list.list-group .city-list-item.list-group-item i {
+  margin-right: 21px;
+  font-size: 26px;
+}
+.city-list-wrapper .city-list.list-group .city-list-item.list-group-item h5 {
+  margin: 0;
+}
+.city-list-wrapper .city-list.list-group .city-list-item.list-group-item h5 span {
+  position: relative;
+  top: -4px;
+}
+.city-list-wrapper .city-list.list-group .city-list-item.list-group-item h5 a {
+  display: table;
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+}
